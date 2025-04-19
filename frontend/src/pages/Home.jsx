@@ -11,13 +11,14 @@ function Home() {
     { id: 4, title: "Spiderman 4", release_date: "2023" },
   ];
 
-  const handleSearch = () => {
-    alert("searchQuery");
+  const handleSearch = (e) => {
+    e.preventDefault(); // Prevent form from reloading the page
+    alert(searchQuery); // Show the current search input
   };
 
   return (
     <div className="home">
-      <form className="search-form" onsubmit={handleSearch}>
+      <form className="search-form" onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Search for a movie..."
@@ -29,10 +30,14 @@ function Home() {
           Search
         </button>
       </form>
+
       <div className="movie-grid">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
+        {movies.map(
+          (movie) =>
+            movie.title.toLowerCase().startsWith(searchQuery) && (
+              <MovieCard key={movie.id} movie={movie} />
+            )
+        )}
       </div>
     </div>
   );
