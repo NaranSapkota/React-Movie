@@ -1,19 +1,11 @@
 import "./App.css";
+import MovieCard from "./components/MovieCard";
 
 function App() {
   return (
     <>
-      <Text display="Hello " />
-      <Text display="Krishna!" />
+     
     </>
-  );
-}
-
-function Text({ display }) {
-  return (
-    <div>
-      <p>{display}</p>
-    </div>
   );
 }
 
