@@ -9,6 +9,7 @@ function Home() {
     { id: 2, title: "Terminator", release_date: "1998" },
     { id: 3, title: "The Matrix", release_date: "2022" },
     { id: 4, title: "Spiderman 4", release_date: "2023" },
+    
   ];
 
   const handleSearch = (e) => {
